@@ -514,6 +514,31 @@ section p{
 /* Desktop */
 .main-header{ display:flex; }
 .mobile-header{ display:none; }
+
+.sedes-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.sede {
+  flex: 1 1 45%;
+  min-width: 300px;
+  background: #40734A; /* color de fondo para que el blanco destaque */
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  color: white; /* texto por defecto blanco */
+  text-align: center; /* centra todo el contenido dentro de la tarjeta */
+}
+
+.sede h3 {
+  margin-bottom: 10px;
+  /* no hace falta left */
+  color: white;
+}
+
 /* ================= MOBILE ================= */
 @media (max-width: 900px){
     .main-header{ display:none; }
@@ -956,27 +981,47 @@ section p{
 
 <section id="ubicacion">
   <h2><i class="fa-solid fa-house"></i> Localização</h2>
+  <p>Operamos no Brasil e na Argentina. Nossas bases estão localizadas em:</p>
 
-  <p>
-    Operamos no Brasil e na Argentina. Nossa base está localizada em:
-  </p>
+  <div class="sedes-container">
+    <!-- Sede Santa Catarina -->
+    <div class="sede">
+      <h3>SEDE SANTA CATARINA - BRASIL</h3>
+      <p>
+        R. 454, 530 – Jardim Praia Mar<br>
+        Itapema – Santa Catarina – Brasil<br>
+        CEP 88220-000
+      </p>
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3564.278593!2d-48.6160996!3d-27.1326689!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94d8ae20e0bd2ac3%3A0xbcbc0bd40608ba2e!2sR.%20454%2C%20530%20-%20Jardim%20Praia%20Mar%2C%20Itapema%20-%20SC%2C%2088220-000%2C%20Brasil!5e0!3m2!1spt-BR!2sBR!4v1700000000000"
+        width="100%" 
+        height="250" 
+        style="border:0;" 
+        allowfullscreen 
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
 
-  <p>
-    R. 454, 530 – Jardim Praia Mar<br>
-    Itapema – Santa Catarina – Brasil<br>
-    CEP 88220-000 <br>
-    ==============================
-  </p>
-
-  <iframe 
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3564.278593!2d-48.6160996!3d-27.1326689!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94d8ae20e0bd2ac3%3A0xbcbc0bd40608ba2e!2sR.%20454%2C%20530%20-%20Jardim%20Praia%20Mar%2C%20Itapema%20-%20SC%2C%2088220-000%2C%20Brasil!5e0!3m2!1spt-BR!2sBR!4v1700000000000"
-    width="100%" 
-    height="350" 
-    style="border:0;" 
-    allowfullscreen 
-    loading="lazy"
-    referrerpolicy="no-referrer-when-downgrade">
-  </iframe>
+    <!-- Sede Buenos Aires -->
+    <div class="sede">
+      <h3>SEDE BUENOS AIRES - ARGENTINA</h3>
+      <p>
+        Mariano Castex 3489<br>
+        B1804 Canning<br>
+        Provincia de Buenos Aires – Argentina
+      </p>
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3276.123456!2d-58.4321!3d-34.7568!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcc0df9e0b5d71%3A0xabcdef1234567890!2sMariano%20Castex%203489%2C%20Canning%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-AR!2sar!4v1700000000002"
+        width="100%" 
+        height="250" 
+        style="border:0;" 
+        allowfullscreen 
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
 </section>
 
 
