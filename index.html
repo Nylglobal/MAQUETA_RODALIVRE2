@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Roda Livre | Casas Rodantes e Food Trucks no Brasil</title>
+<meta name="description" content="Fabricação e venda de casas rodantes e food trucks no Brasil. Projetos sob medida, qualidade premium e entrega em todo o país.">
+<meta name="keywords" content="casas rodantes, food trucks, trailers, fabricação, brasil">
+<meta name="author" content="Roda Livre">
+<link rel="canonical" href="https://tudominio.com/">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Roda Livre",
+  "image": "https://rodalivre.com.br/logo.png",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "R. 454, 530 – Jardim Praia Mar",
+    "addressLocality": "Itapema",
+    "addressRegion": "SC",
+    "addressCountry": "BR"
+  },
+  "url": "https://rodalivre.com.br",
+  "telephone": "+55 47 99627-003",
+  "sameAs": [
+    "https://instagram.com/somosrodalivre"
+  ]
+}
+</script>
+
+
+<style>
+/* ================= RESET ================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, Helvetica, sans-serif;
+}
+html{scroll-behavior:smooth}
+
+/* ================= INTRO ================= */
+#intro{
+  position:fixed;
+  inset:0;
+  background:#40734A;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+  animation:slideUp 1s ease forwards;
+  animation-delay:2.5s;
+}
+#intro img{width:320px; animation:fadeZoom 2.2s ease}
+@keyframes fadeZoom{
+  from{opacity:0; transform:scale(.9)}
+  to{opacity:1; transform:scale(1)}
+}
+@keyframes slideUp{to{transform:translateY(-100%)}}
+
+.hero-seo{
+  position:absolute;
+  left:-9999px;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+}
+
+
+/* ================= HEADER ================= */
+header{
+  position:sticky;
+  top:0;
+  background:#587A57;
+  display:flex;
+  align-items:center;
+  gap:30px;
+  padding:15px 40px;
+  z-index:1000;
+}
+header img{height:55px}
+header nav{
+  flex:1;
+  display:flex;
+  justify-content:center;
+  gap:30px;
+}
+header nav a{
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+  position:relative;
+}
+header nav a::after{
+  content:'';
+  position:absolute;
+  bottom:-5px;
+  left:0;
+  width:0;
+  height:2px;
+  background:#fff;
+  transition:.3s;
+}
+header nav a:hover::after{width:100%}
+.nav-buttons{
+  display:flex;
+  gap:14px;
+}
+
+.nav-buttons a{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:10px 16px;
+  border-radius:20px;
+  background:#3E5F3E;
+  color:#fff;
+  text-decoration:none;
+  font-size:14px;
+  font-weight:600;
+  box-shadow:0 4px 10px rgba(0,0,0,.25);
+  transition:.25s;
+}
+
+.nav-buttons a{
+  backdrop-filter: blur(6px);
+  background:rgba(62,95,62,.85);
+}
+
+/* Botón CTA (Contacto) */
+.nav-cta{
+  background:#25D366 !important;
+  color:#fff;
+}
+
+.nav-cta:hover{
+  background:#1ebe5d !important;
+}
+
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.brand h1{
+  color:white;
+  font-size:20px;
+  font-weight:500;
+  line-height:1.2;
+}
+
+/* ================= HERO / CAROUSEL ================= */
+.carousel{
+  position:relative;
+  width:100%;
+  height:60vh;
+  overflow:hidden;
+  background:#1f1f1f;
+}
+
+/* IMÁGENES */
+.carousel img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:contain;     /* 👈 imagen completa */
+  opacity:0;
+  transform:translateX(-100%);
+  transition:transform 1s ease, opacity 0.6s ease;
+}
+
+/* ACTIVA */
+.carousel img.active{
+  opacity:1;
+  transform:translateX(0);
+  z-index:2;
+}
+
+/* SALE */
+.carousel img.exit{
+  opacity:0;
+  transform:translateX(100%);
+  z-index:1;
+}
+
+
+/* PANEL VERDE */
+.hero-panel{
+  position:absolute;
+  left:0;
+  top:50%;
+  transform:translateY(-50%);
+  width:420px;
+  background:#3E5F3E;
+  border-radius:0 45px 45px 0;
+  padding:35px 30px;
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+  z-index:10;
+}
+
+/* TEXTOS */
+.hero-text{
+  font-size:18px;
+  color:#9e9e9e;
+  opacity:.4;
+  transform:translateY(6px);
+  transition:.8s;
+}
+.hero-text.active{
+  color:#fff;
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* ================= PROMO ================= */
+.promo{
+  background:#222;
+  color:#fff;
+  padding:10px 0;
+  overflow:hidden;
+}
+.promo p{
+  white-space:nowrap;
+  animation:scroll 15s linear infinite;
+}
+@keyframes scroll{
+  from{transform:translateX(100%)}
+  to{transform:translateX(-100%)}
+}
+
+/* ================= SECTIONS ================= */
+section{
+  padding:70px 40px;
+  max-width:1100px;
+  margin:60px auto;
+  background:#3E5F3E;
+  border-radius:24px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.08);
+
+}
+
+section h2{
+  text-align:center;
+  color:#FFFFFF;
+  font-size:32px;
+  margin-bottom:25px;
+}
+section p{
+  text-align:center;
+  max-width:800px;
+  margin:auto;
+  line-height:1.6;
+    color:#FFFFFF;
+}
+
+/* ================= GRID ================= */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+  margin-top:40px;
+}
+.card{
+  background:#fff;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 10px 25px rgba(0,0,0,.12);
+  transition:.3s;
+  text-align:center;
+}
+.card:hover{transform:translateY(-5px)}
+.card img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+}
+.card h3{
+  margin:15px 0 5px;
+  color:#40734A;
+}
+.card p{padding:0 15px}
+.card button{
+  margin:15px 0 20px;
+  padding:8px 20px;
+  border:none;
+  border-radius:20px;
+  background:#40734A;
+  color:#fff;
+  cursor:pointer;
+}
+/* PROYECTOS FINALIZADOS */
+.gallery-strip{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 30px;
+}
+
+.gallery-strip img{
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.gallery-strip img:hover{
+  transform: scale(1.04);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+
+
+
+/* ================= MODAL ================= */
+.image-modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.9);
+  z-index:3000;
+  align-items:center;
+  justify-content:center;
+}
+.image-modal img{
+  max-width:90%;
+  max-height:90%;
+}
+.image-modal span{
+  position:absolute;
+  top:20px;
+  right:30px;
+  color:#fff;
+  font-size:28px;
+  cursor:pointer;
+}
+
+#quienes p {
+  margin-bottom: 20px;
+  line-height: 1.7;
+}
+.contacto {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.contacto-items {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+
+
+
+
+/* ================= FOOTER ================= */
+.footer {
+  background: #1f1f1f;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+}
+
+/* ================= QUEM SOMOS ================= */
+
+.quienes-content{
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 40px;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.quienes-text p{
+  margin-bottom: 18px;
+  line-height: 1.7;
+}
+
+/* SLIDER */
+.quienes-slider{
+  position: relative;
+  width: 100%;
+  height: 360px;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+.quienes-slider img{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.quienes-slider img.active{
+  opacity: 1;
+}
+
+/* FLAGS */
+.flags{
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.flags img{
+  width: 34px;
+  cursor: pointer;
+  transition: transform .3s;
+}
+
+.flags img:hover{
+  transform: scale(1.1);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px){
+  .quienes-content{
+    grid-template-columns: 1fr;
+  }
+
+  .quienes-slider{
+    height: 260px;
+  }
+}
+.wpp-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  background:#25D366;
+  color:#fff;
+  padding:12px 22px;
+  border-radius:50px;
+  font-weight:600;
+  text-decoration:none;
+  box-shadow:0 6px 18px rgba(37,211,102,0.4);
+  transition:all .25s ease;
+}
+
+.wpp-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 28px rgba(37,211,102,0.55);
+}
+
+.wpp-icon{
+  width:34px;
+  height:34px;
+  background:#fff;
+  color:#25D366;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:20px;
+}
+
+.wpp-text{
+  font-size:16px;
+}
+
+.ig-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  background:linear-gradient(45deg,#F58529,#DD2A7B,#8134AF,#515BD4);
+  color:#fff;
+  padding:12px 22px;
+  border-radius:50px;
+  font-weight:600;
+  text-decoration:none;
+  box-shadow:0 6px 18px rgba(221,42,123,0.4);
+  transition:all .25s ease;
+}
+
+.ig-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 28px rgba(221,42,123,0.55);
+}
+
+.ig-icon{
+  width:34px;
+  height:34px;
+  background:#fff;
+  color:#DD2A7B;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:20px;
+}
+
+.ig-text{
+  font-size:16px;
+}
+/* Desktop */
+.main-header{ display:flex; }
+.mobile-header{ display:none; }
+/* ================= MOBILE ================= */
+@media (max-width: 900px){
+    .main-header{ display:none; }
+  .mobile-header{ display:block; }
+
+  /* HEADER */
+  header{
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px 20px;
+  }
+
+  header nav{
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  header img{
+    height: 45px;
+  }
+   .mobile-header{
+    background:#587A57;
+    padding:20px 15px;
+    text-align:center;
+  }
+
+  .mobile-header img{
+    height:60px;
+    margin-bottom:10px;
+  }
+
+  .mobile-header h1{
+    font-size:16px;
+    color:#fff;
+    margin-bottom:15px;
+    font-weight:500;
+  }
+
+  .mobile-nav{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+  }
+
+  .mobile-nav a{
+    background:#3E5F3E;
+    color:#fff;
+    padding:12px 10px;
+    border-radius:14px;
+    text-decoration:none;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:6px;
+    font-size:13px;
+    box-shadow:0 4px 10px rgba(0,0,0,.2);
+  }
+
+  .mobile-nav i{
+    font-size:20px;
+  }
+
+    /* HERO */
+  .carousel{
+    position: relative;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    background: #343B34;
+  }
+
+  .carousel img{
+    position: relative;
+    inset: auto;
+    margin-top: 1%;
+    margin-left: 2%;
+    width: 100%;
+    height: 20vh;
+    object-fit: contain;   /* 🔑 imagen completa */
+    opacity: 1;
+    transform: none;
+  }
+
+  .carousel img:not(.active){
+    display: none; /* solo una imagen visible */
+  }
+
+  /* PANEL HERO */
+  .hero-panel{
+    position: relative;
+    margin-top: 1%;
+    width: 92%;
+    margin: 10px auto 0; /* leve overlap elegante */
+    left: auto;
+    bottom: auto;
+    transform: none;
+    border-radius: 18px;
+    padding: 20px;
+    text-align: center;
+    z-index: 2;
+  }
+
+  .hero-text{
+    display: none;
+    opacity: 0;
+  }
+
+  .hero-text.active{
+    display: block;
+    opacity: 1;
+  }
+
+  /* SECTIONS */
+  section{
+    margin: 40px 15px;
+    padding: 50px 20px;
+  }
+
+  section h2{
+    font-size: 20px;
+  }
+
+  /* GALERIA PROJETOS */
+  .gallery-strip img{
+    min-width: 140px;
+    height: 100px;
+  }
+
+  /* CTA */
+  .rodantes-cta a{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    padding: 14px 22px;
+  }
+
+  /* CONTATO */
+  .contacto-items{
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .contacto-item{
+    justify-content: center;
+    width: 100%;
+    max-width: 320px;
+    margin: auto;
+  }
+
+  /* MAPA */
+  iframe{
+    height: 280px;
+  }
+}
+
+/* ================= EXTRA SMALL ================= */
+@media (max-width: 480px){
+
+  .hero-text{
+    font-size: 15px;
+  }
+
+  .gallery-strip{
+    gap: 10px;
+  }
+
+  .gallery-strip img{
+    min-width: 120px;
+    height: 90px;
+  }
+
+  footer{
+    font-size: 13px;
+  }
+}
+@media (max-width: 1024px){
+  .gallery-strip{
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 700px){
+  .gallery-strip{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 420px){
+  .gallery-strip{
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- INTRO -->
+<div id="intro">
+  <img 
+    src="img/logo-roda-livre.webp" 
+    alt="Roda Livre - Casas Rodantes e Food Trucks no Brasil"
+    width="300"
+    height="300"
+    loading="eager"
+  >
+</div>
+
+<header class="main-header">
+  <div class="brand">
+    <img src="img/isotipo-roda-livre.webp" alt="Isotipo Roda Livre">
+    <h1>Casas Rodantes e Food Trucks no Brasil</h1>
+  </div>
+
+  <nav class="nav-buttons">
+    <a href="#quienes"><i class="fa-solid fa-user"></i> Quem Somos</a>
+    <a href="#rodantes"><i class="fa-solid fa-screwdriver-wrench"></i> Projetos</a>
+    <a href="#ubicacion"><i class="fa-solid fa-house"></i> Localização</a>
+    <a href="#contacto" class="nav-cta">
+      <i class="fa-brands fa-whatsapp"></i> Contato
+    </a>
+  </nav>
+</header>
+
+
+<!-- HEADER MOBILE -->
+<div class="mobile-header">
+  <img src="img/isotipo-roda-livre.webp" alt="Roda Livre isotipo">
+
+  <h1>Casas Rodantes e Food Trucks no Brasil</h1>
+
+  <nav class="mobile-nav">
+    <a href="#quienes"><i class="fa-solid fa-user"></i><span>Quem Somos</span></a>
+    <a href="#rodantes"><i class="fa-solid fa-screwdriver-wrench"></i><span>Projetos</span></a>
+    <a href="#ubicacion"><i class="fa-solid fa-house"></i><span>Localização</span></a>
+    <a href="#contacto"><i class="fa-brands fa-whatsapp"></i><span>Contato</span></a>
+  </nav>
+</div>
+
+  <!-- TEXTO SEMÁNTICO REAL (SEO) -->
+  <div class="hero-seo">
+    <h2>Fabricação de Casas Rodantes e Food Trucks no Brasil</h2>
+    <p>
+      Projetamos e fabricamos casas rodantes e food trucks sob medida, 
+      com design funcional, materiais premium e entrega para todo o Brasil.
+    </p>
+  </div>
+<!-- HERO -->
+<div class="carousel">
+  <div class="hero-panel">
+    <div class="hero-text active">Fabricação sob medida de casas rodantes</div>
+    <div class="hero-text">Design funcional e equipamentos de qualidade</div>
+    <div class="hero-text">Casas rodantes prontas para se aventurar</div>
+    <div class="hero-text">Food trucks prontos para trabalhar</div>
+    <div class="hero-text">Fabricados artesanalmente com atenção aos detalhes</div>
+  </div>
+
+  <img src="carrusel1.webp" class="active" alt="Casa rodante sob medida no Brasil">
+  <img src="carrusel2.webp" alt="Projeto de casa rodante personalizada">
+  <img src="carrusel3.webp" alt="Food truck personalizado profissional">
+  <img src="carrusel4.webp" alt="Interior de casa rodante moderna">
+  <img src="carrusel5.webp" alt="Trailer habitacional artesanal">
+
+
+</div>
+
+<div class="promo">
+  <p>🔥 Projetos sob medida – Entrega para todo o Brasil – Fale conosco hoje mesmo 🔥</p>
+</div>
+
+<section id="quienes" class="quienes">
+ 
+
+<div class="flags">
+     <h2><i class="fa-solid fa-user"></i> Quem Somos <i class="fa-solid fa-user"></i></h2>
+ </div>
+
+  <div class="quienes-content">
+    
+    <!-- TEXTO -->
+    <div class="quienes-text">
+      <p>
+        Na Roda Livre, somos uma <strong>empresa brasileiro-argentina</strong> especializada na fabricação de casas rodantes e food trucks sob medida para todo o Brasil e a Argentina, desenvolvidos para quem busca liberdade, conforto e qualidade na estrada. Cada projeto é pensado de forma personalizada, desde o design até a escolha dos materiais, garantindo soluções funcionais, modernas e prontas para rodar.
+      </p>
+
+      <p>
+        Nossa fabricação é totalmente artesanal, cuidando de cada detalhe do processo: estrutura, isolamento, marcenaria, instalações elétricas e hidráulicas, sempre utilizando acessórios e materiais de alta qualidade. Trabalhamos com modelos que vão desde a Mini Rod 144 até projetos maiores de até 6 metros, incluindo versões com dois eixos, adaptadas para diferentes necessidades e estilos de vida.
+      </p>
+
+      <p>
+        Seja para lazer, turismo ou negócios, entregamos casas rodantes e food trucks completos, seguros e duráveis, pensados para proporcionar experiências únicas na estrada em qualquer região do Brasil e da Argentina.
+      </p>
+    </div>
+
+<!-- IMÁGENES -->
+<div class="quienes-slider">
+  <img src="trabajo1.webp" class="active" 
+       alt="Fabricação artesanal de casas rodantes em Itapema SC">
+
+  <img src="trabajo2.webp" 
+       alt="Interior de casa rodante sob medida no Brasil">
+
+  <img src="trabajo3.webp" 
+       alt="Food truck personalizado profissional no Brasil">
+
+  <img src="trabajo4.webp" 
+       alt="Detalhes de acabamento premium em trailer habitacional">
+
+  <img src="trabajo5.webp" 
+       alt="Projeto de casa rodante artesanal de alta qualidade">
+</div>
+
+
+  </div>
+</section>
+
+
+<section id="rodantes">
+  <h2><i class="fa-solid fa-screwdriver-wrench"></i> Projetos Realizados <i class="fa-solid fa-screwdriver-wrench"></i></h2>
+
+<div class="gallery-strip">
+
+  <img src="img/rodante1.webp" 
+       alt="Casa rodante sob medida em Itapema SC" 
+       loading="lazy" decoding="async"
+       width="400" height="300"
+       onclick="openImage(this.src)">
+
+  <img src="img/rodante2.webp" 
+       alt="Projeto de trailer habitacional no Brasil" 
+       loading="lazy" decoding="async"
+       width="400" height="300"
+       onclick="openImage(this.src)">
+
+  <img src="img/rodante3.webp" 
+       alt="Casa rodante personalizada com cozinha" 
+       loading="lazy" decoding="async"
+       width="400" height="300"
+       onclick="openImage(this.src)">
+
+  <img src="img/rodante4.webp" 
+       alt="Interior de casa rodante de luxo" 
+       loading="lazy" decoding="async"
+       width="400" height="300"
+       onclick="openImage(this.src)">
+
+  <img src="img/rodante5.webp" 
+       alt="Trailer habitacional compacto sob medida" 
+       loading="lazy" decoding="async"
+       width="400" height="300"
+       onclick="openImage(this.src)">
+
+  <img src="img/rodante6.webp" 
+       alt="Projeto de casa rodante para viagens" 
+       loading="lazy" decoding="async"
+       width="400" height="300"
+       onclick="openImage(this.src)">
+
+  <img src="img/rodante7.webp" 
+       alt="Casa rodante com banheiro e dormitório" 
+       loading="lazy" decoding="async"
+       width="400" height="300"
+       onclick="openImage(this.src)">
+
+  <img src="img/rodante8.webp" 
+       alt="Trailer residencial personalizado no Brasil" 
+       loading="lazy" decoding="async"
+       width="400" height="300"
+       onclick="openImage(this.src)">
+
+  <img src="img/rodante9.webp" 
+       alt="Casa rodante artesanal de alta qualidade" 
+       loading="lazy" decoding="async"
+       width="400" height="300"
+       onclick="openImage(this.src)">
+
+  <img src="img/rodante10.webp" 
+       alt="Projeto de trailer para camping" 
+       loading="lazy" decoding="async"
+       width="400" height="300"
+       onclick="openImage(this.src)">
+
+  <img src="img/rodante11.webp" 
+       alt="Casa rodante moderna com design funcional" 
+       loading="lazy" decoding="async"
+       width="400" height="300"
+       onclick="openImage(this.src)">
+
+  <img src="img/rodante12.webp" 
+       alt="Trailer habitacional com acabamento premium" 
+       loading="lazy" decoding="async"
+       width="400" height="300"
+       onclick="openImage(this.src)">
+
+  <img src="img/rodante13.webp" 
+       alt="Casa rodante familiar para estrada" 
+       loading="lazy" decoding="async"
+       width="400" height="300"
+       onclick="openImage(this.src)">
+
+  <img src="img/rodante14.webp" 
+       alt="Projeto de trailer personalizado em Santa Catarina" 
+       loading="lazy" decoding="async"
+       width="400" height="300"
+       onclick="openImage(this.src)">
+
+  <img src="img/rodante15.webp" 
+       alt="Casa rodante para turismo e lazer" 
+       loading="lazy" decoding="async"
+       width="400" height="300"
+       onclick="openImage(this.src)">
+
+  <img src="img/rodante16.webp" 
+       alt="Trailer sob medida fabricado no Brasil" 
+       loading="lazy" decoding="async"
+       width="400" height="300"
+       onclick="openImage(this.src)">
+
+</div>
+
+
+
+
+<div class="rodantes-cta">
+  <a href="javascript:void(0)" onclick="contactarWhatsApp()" class="wpp-btn">
+    <span class="wpp-icon">
+      <i class="fab fa-whatsapp"></i>
+    </span>
+    <span class="wpp-text">
+      Fale conosco no WhatsApp
+    </span>
+  </a>
+</div>
+
+
+</section>
+
+
+<section id="ubicacion">
+  <h2><i class="fa-solid fa-house"></i> Localização</h2>
+
+  <p>
+    Operamos no Brasil e na Argentina. Nossa base está localizada em:
+  </p>
+
+  <p>
+    R. 454, 530 – Jardim Praia Mar<br>
+    Itapema – Santa Catarina – Brasil<br>
+    CEP 88220-000 <br>
+    ==============================
+  </p>
+
+  <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3564.278593!2d-48.6160996!3d-27.1326689!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94d8ae20e0bd2ac3%3A0xbcbc0bd40608ba2e!2sR.%20454%2C%20530%20-%20Jardim%20Praia%20Mar%2C%20Itapema%20-%20SC%2C%2088220-000%2C%20Brasil!5e0!3m2!1spt-BR!2sBR!4v1700000000000"
+    width="100%" 
+    height="350" 
+    style="border:0;" 
+    allowfullscreen 
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+</section>
+
+
+<section id="contacto" class="contacto">
+  <h2><i class="fa-brands fa-whatsapp"></i> <i class="fa-brands fa-instagram"></i> Contato <i class="fa-brands fa-whatsapp"></i> <i class="fa-brands fa-instagram"></i></h2>
+
+  <div class="contacto-items">
+    
+<a href="javascript:void(0)"
+   onclick="contactarWhatsApp()"
+   class="wpp-btn">
+  <span class="wpp-icon">
+    <i class="fab fa-whatsapp"></i>
+  </span>
+  <span class="wpp-text">
+    Converse conosco
+  </span>
+</a>
+
+
+<a href="https://instagram.com/somosrodalivre" 
+   target="_blank" 
+   class="ig-btn">
+  <span class="ig-icon">
+    <i class="fab fa-instagram"></i>
+  </span>
+  <span class="ig-text">
+    @somosrodalivre
+  </span>
+</a>
+
+  </div>
+</section>
+<footer class="footer">
+  <p>© 2026 – Roda Livre. Todos os direitos reservados.</p>
+</footer>
+
+
+<!-- MODAL -->
+<div id="imageModal" class="image-modal">
+  <span onclick="closeImage()">✖</span>
+  <img id="modalImg">
+</div>
+
+
+
+<script>
+const slides = document.querySelectorAll('.carousel img');
+const texts = document.querySelectorAll('.hero-text');
+let index = 0;
+
+setInterval(() => {
+  const current = slides[index];
+  const currentText = texts[index];
+
+  current.classList.remove('active');
+  current.classList.add('exit');
+  currentText.classList.remove('active');
+
+  index = (index + 1) % slides.length;
+
+  const next = slides[index];
+  const nextText = texts[index];
+
+  next.classList.remove('exit');
+  next.classList.add('active');
+  nextText.classList.add('active');
+
+  setTimeout(() => {
+    current.classList.remove('exit');
+  }, 1000);
+
+}, 6000);
+
+
+function openImage(src){
+  document.getElementById('imageModal').style.display='flex';
+  document.getElementById('modalImg').src=src;
+}
+function closeImage(){
+  document.getElementById('imageModal').style.display='none';
+}
+function contactarWhatsApp() {
+  const numeros = [
+    "55915591414854",
+    "554799627003"
+  ];
+
+  const escolhido = numeros[Math.floor(Math.random() * numeros.length)];
+
+  const mensagem = encodeURIComponent(
+    "Olá! Gostaria de receber mais informações."
+  );
+
+  window.open(`https://wa.me/${escolhido}?text=${mensagem}`, "_blank");
+}
+const quienesImages = document.querySelectorAll('.quienes-slider img');
+let quienesIndex = 0;
+
+setInterval(() => {
+  quienesImages[quienesIndex].classList.remove('active');
+  quienesIndex = (quienesIndex + 1) % quienesImages.length;
+  quienesImages[quienesIndex].classList.add('active');
+}, 2000);
+</script>
+
+</body>
+</html>
