@@ -668,6 +668,15 @@ section p{
     height: 100px;
   }
 
+.rodantes-cta{
+  width:100%;
+  text-align:center;
+}
+.rodantes-cta .wpp-btn{
+  margin: 0 auto;
+  display:inline-flex;
+}
+
   /* CTA */
   .rodantes-cta a{
     display: inline-flex;
@@ -677,11 +686,14 @@ section p{
     padding: 14px 22px;
   }
 
-  /* CONTATO */
-  .contacto-items{
-    flex-direction: column;
-    gap: 18px;
-  }
+.contacto-items{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:20px; /* separación real entre botones */
+  margin-top:30px;
+}
+
 
   .contacto-item{
     justify-content: center;
@@ -703,7 +715,9 @@ section p{
     font-size: 15px;
   }
 
-
+  .gallery-strip{
+    gap: 10px;
+  }
 
   .gallery-strip img{
     min-width: 120px;
@@ -730,8 +744,23 @@ section p{
   .gallery-strip{
     grid-template-columns: 1fr;
   }
-
 }
+
+#rodantes{
+  display:block !important;
+}
+
+.rodantes-cta{
+  width:100%;
+  display:flex;
+  justify-content:center;
+  margin-top:40px;
+}
+
+.rodantes-cta .wpp-btn{
+  display:inline-flex;
+}
+
 </style>
 </head>
 
@@ -819,7 +848,6 @@ section p{
 
   <div class="quienes-content">
     
-    <!-- TEXTO -->
 <div class="quienes-text">
   <p>
     Na Roda Livre, somos uma empresa especializada na fabricação de casas rodantes e food trucks sob medida para todo o Brasil, desenvolvidos para quem busca liberdade, conforto e qualidade na estrada. Cada projeto é pensado de forma personalizada, desde o design até a escolha dos materiais, garantindo soluções funcionais, modernas e prontas para rodar.
@@ -833,7 +861,6 @@ section p{
     Seja para lazer, turismo ou negócios, entregamos casas rodantes e food trucks completos, seguros e duráveis, pensados para proporcionar experiências únicas na estrada em qualquer região do Brasil.
   </p>
 </div>
-
 
 <!-- IMÁGENES -->
 <div class="quienes-slider">
@@ -1112,10 +1139,3 @@ setInterval(() => {
 
 </body>
 </html>
-
-
-
-
-
-
-
